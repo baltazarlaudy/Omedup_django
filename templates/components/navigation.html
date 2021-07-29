@@ -1,0 +1,46 @@
+{% load static %}
+{% load active_link_tags %}
+<header class="navigation">
+    <div class="brand">
+        <img src="{% static 'logo/logo_omedup.png' %}" alt="logo" class="logo">
+    </div>
+        <div class="menu-toogle inactive-menu" id="menu-toogle"></div>
+        <div class="navbar-all inactive">
+            <ul class="navbar-list">
+            {% url 'base:home' as home %}
+            <li><a href="{% url 'base:home' %}" class="{% if request.path == home %}active{% endif %}"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#" ><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="#"><i class="fas fa-address-book"></i> Contact</a></li>
+        </ul>
+             <div class="form-search">
+                <form action="#">
+                    <input type="search" name="search" id="search" placeholder="Search">
+                </form>
+                 <span><i class="fas fa-search"></i></span>
+            </div>
+            {% if user.is_authenticated %}
+                <ul class="account">
+                {% if section and section == 'dashboard' %}
+                    <li><a href="{{ account.get_profile.get_absolute_url }}">Profile</a></li>
+                    {% else %}
+                <li><a href="{% url 'account:dashboard' %}" class="{% active_link 'account:dashboard' 'active' %}">Dashboard</a></li>
+                {% endif %}
+                 <li><a href="{% url 'logout' %}">Log out</a></li>
+                <li class="avatar-profil">
+                 <a href="#">
+                    {% if request.user.get_profile.profile.avatar  %}
+                        <img src="{{ request.user.get_profile.profile.avatar.url }}" alt="profil">
+                    {% else %}
+                        <i class="fas fa-user-circle"></i>
+                         {% endif %}
+                        </a>
+                        </li>
+                </ul>
+            {% else %}
+                <ul class="account">
+                    <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+                    <li><a href="{% url 'account:registration' %}"><i class="fas fa-user-plus"></i> register</a></li>
+                </ul>
+            {% endif %}
+        </div>
+</header>

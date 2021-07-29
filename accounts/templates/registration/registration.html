@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+   <div class="signup-form">
+       <div class="signup">
+           <h3 class="text-center">Creer un compte</h3>
+           <hr>
+           <form method="post">
+               {% csrf_token %}
+               {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <p class="error">{{ error }}</p>
+                    {% endfor %}
+
+                {% endfor %}
+
+               {% endif %}
+               <div class="form-row">
+                   <div class="form-input">
+                       <label for="">{{ form.nom.label }}</label>
+                       {{ form.nom }}
+                   </div>
+                   <div class="form-input">
+                       <label for="">{{ form.prenom.label }}</label>
+                       {{form.prenom }}
+                   </div>
+               </div>
+               <div class="form-row">
+                   <div class="form-input">
+                       <label for="">{{ form.age.label }}</label>
+                       {{ form.age }}
+                   </div>
+                   <div class="form-input">
+                       <label for="">{{ form.email.label}}</label>
+                       {{ form.email }}
+                   </div>
+               </div>
+               <div class="form-row">
+                   <div class="form-input">
+                       <label for="">{{ form.password.label }}:</label>
+                       {{ form.password }}
+                   </div>
+                   <div class="form-input">
+                       <label for="">{{ form.password2.label}}:</label>
+                       {{ form.password2 }}
+                   </div>
+               </div>
+               <hr>
+               <div class="submit-button">
+                   <a href="{% url 'login' %}">J'ai deja un compte</a>
+                   <button type="submit" class="btn service-button button-end">Creer mon compte</button>
+               </div>
+           </form>
+       </div>
+   </div>
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends 'account/dashboard.html' %}
+{% load static %}
+{% block title %}
+    {{ profil.user.nom }}
+{% endblock %}
+{% block main %}
+    <div class="col-md-10">
+        <div class="row">
+             <div class="col-md-8">
+                 <h3 class="text-center">Modifier mes information</h3>
+                 {% if messages %}
+                    {% for message in messages %}
+                        <div class="text-{{ message.tags }}">
+                        {{ message }}
+                        </div>
+                    {% endfor %}
+
+                 {% endif %}
+                 <hr>
+                 <div class="form-section border">
+                     <form method="POST" enctype="multipart/form-data">
+                         {% csrf_token %}
+                         <div class="form-section-row">
+                             <div class="form-input">
+                                 <label for="{{ form_account.nom.id_for_label }}">{{ form_account.nom.label }}</label>
+                                {{ form_account.nom }}
+                             </div>
+                             <div class="form-input">
+                                 <label for="{{ form_account.prenom.id_for_label }}">{{ form_account.prenom.label }}</label>
+                                {{ form_account.prenom }}
+                             </div>
+                         </div>
+                         <div class="form-section-row">
+                             <div class="form-input">
+                                 <label for="{{ form_account.age.id_for_label }}">{{ form_account.age.label }}</label>
+                                {{ form_account.age }}
+                             </div>
+                             <div class="form-input">
+                                 <label for="{{ form.sexe.id_for_label }}">{{ form.sexe.label }}</label>
+                                {{ form.sexe }}
+                             </div>
+                         </div>
+                         <div class="form-section-row">
+                             <div class="form-input">
+                                 <label for="{{ form.address.id_for_label }}">{{ form.address.label }}</label>
+                                {{ form.address }}
+                             </div>
+                             <div class="form-input">
+                                 <label for="{{ form.pays.id_for_label }}">{{ form.pays.label }}</label>
+                                {{ form.pays }}
+                             </div>
+                         </div>
+                         <div class="form-section-row">
+                             <div class="form-input">
+                                 <label for="{{ form.departement.id_for_label }}">{{ form.departement.label }}: </label>
+                                {{ form.departement }}
+                             </div>
+                             <div class="form-input">
+                                 <label for="{{ form.status.id_for_label }}">{{ form.status.label }}: </label>
+                                {{ form.status }}
+                             </div>
+                         </div>
+                         <div class="form-section-row">
+                             <div class="form-input">
+                                 <label for="{{ form.profession.id_for_label }}">{{ form.profession.label }}: </label>
+                                {{ form.profession }}
+                             </div>
+                             <div class="form-input">
+                                 <label for="{{ form.assurance.id_for_label }}">{{ form.assurance.label }}: </label>
+                                {{ form.assurance }}
+                             </div>
+                         </div>
+                         <div class="button">
+                              <button type="submit" class="btn service-button">Enregistrer</button>
+                         </div>
+                     </form>
+                 </div>
+             </div>
+        <div class="col-md-4 p-4 border-start">
+            <h3 class="text-center">Mes informations</h3>
+        {% if profile.profile.avatar %}
+            <form action="{% url 'profile:edit_avatar' profile.profile.slug %}" method="POST" enctype="multipart/form-data" class="form-avatar" id="image-form">
+            {% csrf_token %}
+            <div class="avatar-profil">
+                 <img src="{{ profile.profile.avatar.url }}" alt="avatar" class="image-size" id="output">
+            </div>
+            <div class="avatar-input">
+                <input type="file" name="avatar" accept="image/*" onchange="showPreview(event);">
+            </div>
+            <input type="submit" value="Enregistrer" id="enregistrer">
+            </form>
+            {% else %}
+             <form action="{% url 'profile:upload_avatar' profile.slug %}" method="POST" enctype="multipart/form-data" class="form-avatar" id="image-form">
+            {% csrf_token %}
+            <img src="{% static 'avatar/avatar.png' %}" alt="avatar" class="image-size">
+            <div class="avatar-input">
+                <input type="file" accept="image/*" name="avatar" id="avatar">
+            </div>
+            <input type="submit" value="Enregistrer" id="enregistrer">
+            </form>
+         {% endif %}
+            <hr>
+             {% if profile %}
+                <p><b>Nom:</b> {{ profile.user.nom }} {{ profile.user.prenom }}</p>
+                 <p><b>Date de naissance:</b> {{ profile.user.age }}</p>
+                 <p><b>Sexe:</b> {{ profile.sexe }}</p>
+                 <p><b>Adresse:</b> {{ profile.address }}, {{ profile.departement }}, {{ profile.pays }}</p>
+                 <p><b>Status:</b> {{ profile.status }} </p>
+                 <p><b>Profession:</b> {{ profile.profession }} </p>
+                 <p><b>Carte d'assurance:</b> {{ profile.assurance }} </p>
+                 <a href="#">Modifier mes informations</a>
+                 <p><a href="#">Retourner a mon profile</a></p>
+
+            {% endif %}
+        </div>
+        </div>
+    </div>
+    <script>
+    function showPreview(event){
+  if(event.target.files.length > 0){
+    let src = URL.createObjectURL(event.target.files[0]);
+    console.log(src)
+    let preview = document.getElementById("output");
+    preview.src = src;
+    preview.style.display = "block";
+  }
+}
+    </script>
+{% endblock %}

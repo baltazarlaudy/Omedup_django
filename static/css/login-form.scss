@@ -1,0 +1,239 @@
+$basic_bg: rgba(127, 125, 125, 0.3);
+$basic_color: #01A881;
+/*global
+ */
+.submit-button{
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  a{
+    font-weight: bold;
+  }
+}
+.login-form{
+  position: relative;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .login{
+    background: #F2F2F2;
+    padding: 30px;
+    width: 400px;
+    border: 1px solid $basic_bg;
+    border-radius: 10px;
+    .login-input{
+      display: flex;
+      flex-direction: column;
+      i{
+        padding: 5px;
+        color: $basic_color;
+      }
+      input{
+        width: 90%;
+        outline: none;
+        border: none;
+        padding: 5px;
+        font-size: 20px;
+        background: transparent;
+      }
+      input:focus{
+        background: transparent;
+      }
+  }
+    .input{
+      display: flex;
+      margin: 15px 0px;
+      background: #ffffff;
+      border: 2px solid rgba(182, 179, 179, 0.43);
+      border-radius: 5px;
+      justify-content: center;
+      align-items: center;
+      }
+    }
+    input{
+      justify-self: end;
+    }
+  }
+
+.meta-login{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.button-end{
+  align-self: end;
+}
+.meta-text{
+  display: block;
+  padding: 0;
+  margin: 0;
+  a{
+    text-decoration: none;
+    color: $basic_color;
+  }
+  a:hover{
+    color: black;
+  }
+}
+.error{
+  color:#d20606 ;
+}
+.valid{
+      box-shadow: 0px 0px 5px $basic_color;
+    }
+.invalid{
+      box-shadow: 0px 0px 5px #d20606;
+    }
+.validation {
+  padding: 0px 10px;
+
+  p {
+    color: #d20606;
+  }
+}
+/*signup form
+ */
+.signup-form {
+  margin-top: 20px;
+  position: relative;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .signup {
+    background: #F2F2F2;
+    padding: 30px;
+    width: 800px;
+    border: 1px solid $basic_bg;
+    border-radius: 10px;
+   .form-row{
+     display: flex;
+     .form-input{
+       padding: 10px 5px;
+       width: 50%;
+       background: #fff;
+        border-radius: 5px;
+       margin: 3px;
+       box-shadow: 2px 2px 5px #444444;
+       label{
+         color: $basic_color;
+         font-weight: 700;
+       }
+       input[type=text], input[type=password], input[type=email]{
+         outline: none;
+         padding: 5px;
+         border: none;
+         border-bottom: 2px solid #444444 !important;
+         background: transparent;
+         width: 80%;
+       }
+       input[type=date]{
+         padding: 5px;
+          outline: none;
+         border: none;
+         background: transparent;
+         width: 80%;
+       }
+     }
+   }
+  }
+}
+/*
+edit profil form
+ */
+.form-section{
+  display: flex;
+  position: relative;
+  form{
+    width: 100%;
+  }
+}
+.form-section-row{
+  display: flex;
+  width: 100%;
+}
+.form-input{
+       padding: 10px 5px;
+       width: 50%;
+       background: #fff;
+        border-radius: 5px;
+  border: 0.1px solid rgba(182, 181, 181, 0.6);
+       margin: 3px;
+       label{
+         color: #444444;
+         font-weight: 700;
+       }
+   input[type=text], input[type=password], input[type=email]{
+         outline: none;
+         padding: 5px;
+         border: none;
+         background: transparent;
+         width: 80%;
+        border-bottom: 1px solid rgba(182, 181, 181, 0.6);
+       }
+       input[type=date]{
+         padding: 5px;
+          outline: none;
+         border: none;
+         background: transparent;
+         width: 80%;
+       }
+  select{
+         padding: 5px;
+          border: 0.1px solid rgba(182, 181, 181, 0.6);
+          border-radius: 5px;
+         background: transparent;
+         width: 80%;
+       }
+}
+.button{
+  display: flex;
+  justify-content: end;
+}
+.form-avatar{
+display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.avatar-input{
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  cursor: pointer;
+  border-radius: 50%;
+   input[type=file]{
+     display: flex;
+    color: transparent;
+     justify-self: center;
+  }
+  input[type=file]::-webkit-file-upload-button{
+    visibility: hidden;
+  }
+  input[type=file]:before{
+    cursor: pointer;
+     content: "Changer ma photo";
+    color: $basic_color;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+.image-size{
+  display: flex;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  justify-self: center;
+  border: 3px solid #444444;
+}
+.avatar-profil{
+  display: flex;
+  justify-content: center;
+
+}
+.image-none{
+  display: none;
+}

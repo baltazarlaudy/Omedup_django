@@ -1,0 +1,39 @@
+.navleft{
+  width: 200px;
+  margin: 0;
+  padding: 0;
+}
+.navbar-left{
+  position: sticky;
+  top: 80px;
+  width: 100%;
+  margin: 0;
+  background: #E4E1E1;
+  ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    li{
+      display: flex;
+      list-style: none;
+      width: 100%;
+      border-bottom: 1px dashed #ffffff;
+      a{
+        overflow: hidden;
+        padding: 15px;
+        display: block;
+        width: 100%;
+        text-transform: capitalize;
+        font-size: 15px;
+        text-decoration: none;
+        color: #000000;
+      }
+      a:hover, a.active{
+        color: $basic_color;
+        background: #ffffff;
+      }
+    }
+  }
+}

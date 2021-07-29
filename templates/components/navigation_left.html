@@ -1,0 +1,14 @@
+<div class="navbar-left sticky">
+    <ul>
+        <li>
+            <a href="{{ profile.get_absolute_url }}" class="{% if request.path == profile.get_absolute_url %}
+                        active{% endif %}"><i class="fas fa-user"></i> Profil</a>
+        </li>
+        <li><a href="#"><i class="fas fa-notes-medical"></i> Prescription</a></li>
+        <li><a href="#"><i class="fas fa-user-md"></i> Medecins</a></li>
+        <li><a href="#"><i class="fas fa-comment-medical"></i> Recommendations</a></li>
+        <li><a href="#"><i class="fas fa-prescription"></i> Pharmacie</a></li>
+        <li><a href="#"><i class="fas fa-pump-medical"></i> Laboratoires</a></li>
+        <li><a href="#"><i class="fas fa-hospital"></i> Hopital</a></li>
+    </ul>
+</div>

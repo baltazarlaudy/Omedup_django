@@ -1,0 +1,10 @@
+{% extends 'account/dashboard.html' %}
+{% block title %}
+    {{ profil.user.nom }}
+{% endblock %}
+{% block main %}
+<div class="col-md-9">
+<h3>Edit profile</h3>
+    <a href="{% url 'profile:edit' profile.slug %}">modifier votre profil</a>
+</div>
+{% endblock %}

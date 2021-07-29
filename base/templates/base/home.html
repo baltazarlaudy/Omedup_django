@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% block banner %}
+    {% include 'components/banner.html' %}
+    {% endblock %}
+<div class="container">
+    <div class="services">
+        <h2 class="text-center p-3 titre-item">Service</h2>
+        <div class="row bg-light">
+            <div class="col-md-3">
+                <div class="service-item">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Medecin</h3>
+                    <button class="btn service-button">Consulter</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="service-item">
+                     <i class="fas fa-clinic-medical"></i>
+                    <h3>Hopital</h3>
+                    <button class="btn service-button">Consulter</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="service-item">
+                    <i class="fas fa-prescription"></i>
+                    <h3>Pharmacie</h3>
+                    <button class="btn service-button">Consulter</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="service-item">
+                    <i class="fas fa-prescription"></i>
+                    <h3>Laboratoire</h3>
+                    <button class="btn service-button">Consulter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <hr>
+    <div class="news-section">
+    <div class="container">
+        <div class="row">
+            <h3 class="text-center">Last News</h3>
+            <hr>
+            <div class="col-md-3">
+                <img src="{% static 'images/ambulance.jpg' %}" alt="image" class="img-fluid">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ab dicta incidunt necessitatibus nihil nisi quaerat reiciendis
+                    sapiente similique temporibus?</p>
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'images/ambulance.jpg' %}" alt="image" class="img-fluid">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ab dicta incidunt necessitatibus nihil nisi quaerat reiciendis
+                    sapiente similique temporibus?</p>
+            </div><div class="col-md-3">
+                <img src="{% static 'images/ambulance.jpg' %}" alt="image" class="img-fluid">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ab dicta incidunt necessitatibus nihil nisi quaerat reiciendis
+                    sapiente similique temporibus?</p>
+            </div><div class="col-md-3">
+                <img src="{% static 'images/ambulance.jpg' %}" alt="image" class="img-fluid">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ab dicta incidunt necessitatibus nihil nisi quaerat reiciendis
+                    sapiente similique temporibus?</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <hr>
+    <div class="section-doctor">
+    <div class="container">
+        <h2 class="text-center">Nos Medecins</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="profil-doctor shadow-lg">
+                    <div class="image">
+                        <img src="{% static 'images/ambulance.jpg' %}" alt="image" class="image-profil">
+                    </div>
+                        <h4>Jane Doe</h4>
+                        <h5 class="text-black-50">Gynecologue</h5>
+                    <div class="profil-meta-social">
+                        <span><a href="#"><i class="fab fa-facebook"></i></a></span>
+                        <span><a href="#"><i class="fab fa-twitter"></i></a></span>
+                        <span><a href="#"><i class="fab fa-linkedin"></i></a></span>
+                        <span><a href="#"><i class="fab fa-instagram-square"></i></a></span>
+                    </div>
+                    <button class="btn service-button">Consulter</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="profil-doctor shadow-lg">
+                    <div class="image">
+                        <img src="{% static 'images/ambulance.jpg' %}" alt="image" class="image-profil">
+                    </div>
+                        <h4>Jane Doe</h4>
+                        <h5 class="text-black-50">Gynecologue</h5>
+                    <div class="profil-meta-social">
+                        <span><a href="#"><i class="fab fa-facebook"></i></a></span>
+                        <span><a href="#"><i class="fab fa-twitter"></i></a></span>
+                        <span><a href="#"><i class="fab fa-linkedin"></i></a></span>
+                        <span><a href="#"><i class="fab fa-instagram-square"></i></a></span>
+                    </div>
+                    <button class="btn service-button">Consulter</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="profil-doctor shadow-lg">
+                    <div class="image">
+                        <img src="{% static 'images/ambulance.jpg' %}" alt="image" class="image-profil">
+                    </div>
+                        <h4>Jane Doe</h4>
+                        <h5 class="text-black-50">Gynecologue</h5>
+                    <div class="profil-meta-social">
+                        <span><a href="#"><i class="fab fa-facebook"></i></a></span>
+                        <span><a href="#"><i class="fab fa-twitter"></i></a></span>
+                        <span><a href="#"><i class="fab fa-linkedin"></i></a></span>
+                        <span><a href="#"><i class="fab fa-instagram-square"></i></a></span>
+                    </div>
+                    <button class="btn service-button">Consulter</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="profil-doctor shadow-lg">
+                    <div class="image">
+                        <img src="{% static 'images/ambulance.jpg' %}" alt="image" class="image-profil">
+                    </div>
+                        <h4>Jane Doe</h4>
+                        <h5 class="text-black-50">Gynecologue</h5>
+                    <div class="profil-meta-social">
+                        <span><a href="#"><i class="fab fa-facebook"></i></a></span>
+                        <span><a href="#"><i class="fab fa-twitter"></i></a></span>
+                        <span><a href="#"><i class="fab fa-linkedin"></i></a></span>
+                        <span><a href="#"><i class="fab fa-instagram-square"></i></a></span>
+                    </div>
+                    <button class="btn service-button">Consulter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

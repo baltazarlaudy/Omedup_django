@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+    Login
+{% endblock %}
+{% block content %}
+    <div class="login-form">
+    <div class="login">
+    <h3 class="text-center">Login</h3>
+        <hr>
+        <form method="post" action="{% url 'login' %}">
+             {% if form.errors %}
+                    <p class="text-danger">Votre email ou mot de pass est incorrect</p>
+                {% endif %}
+            {% csrf_token %}
+            <div class="login-input">
+                <div class="input">
+                     <span><i class="fas fa-user"></i></span>
+                <input type="text" name="{{ form.username.name }}" placeholder="Votre email" id="email">
+                </div>
+                <div class="validation">
+                    <p id="text-error"></p>
+                </div>
+            </div>
+            <div class="login-input">
+                <div class="input">
+                    <span><i class="fas fa-lock"></i></span>
+                    <input type="password" name="{{ form.password.name }}" placeholder="Password">
+                </div>
+            </div>
+        <div class="meta-login">
+            <div class="meta-text">
+                <p><a href="{% url 'account:registration' %}" >Creer un compte</a></p>
+            <p><a href="#">Mot de pass oublie</a></p>
+            </div>
+            <button class="btn service-button button-end" type="submit">Log in</button>
+        </div>
+        </form>
+    </div>
+    </div>
+{% endblock %}
